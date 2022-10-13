@@ -68,13 +68,6 @@ impl<T> fmt::Debug for Hidden<T> {
     }
 }
 
-/// Defines a masked value for the type to display. Concealing the secrets within.
-impl<T> fmt::Display for Hidden<T> {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "Hidden<{}>", std::any::type_name::<T>())
-    }
-}
-
 #[cfg(test)]
 mod test {
     use super::*;
